@@ -5,12 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:paddingStart="@dimen/layout_padding"
+    android:paddingEnd="@dimen/layout_padding"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/name_text"
-        android:text="@string/name"
-        style="@style/NameStyle" />
+        style="@style/NameStyle"
+        android:text="@string/name" />
 
     <!-- match_parent - El View tendra el ancho de su elemento padre -->
     <!-- wrap_content - La altura del View sera igual a la de su contenido -->
@@ -23,12 +25,17 @@
         app:srcCompat="@android:drawable/btn_star_big_on" />
 
     <ScrollView
+        android:id="@+id/bio_scroll"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <LinearLayout
+
+        <TextView
+            android:id="@+id/bio_text"
+            style="@style/NameStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" />
+            android:lineSpacingMultiplier="1.2"
+            android:text="@string/bio" />
     </ScrollView>
 </LinearLayout>
