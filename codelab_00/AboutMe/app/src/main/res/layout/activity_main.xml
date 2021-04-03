@@ -12,9 +12,23 @@
         android:text="@string/name"
         style="@style/NameStyle" />
 
+    <!-- match_parent - El View tendra el ancho de su elemento padre -->
+    <!-- wrap_content - La altura del View sera igual a la de su contenido -->
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/star_image"
         android:layout_width="match_parent"
+
         android:layout_height="wrap_content"
+        android:contentDescription="@string/yellow_star"
         app:srcCompat="@android:drawable/btn_star_big_on" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
 </LinearLayout>
