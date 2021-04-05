@@ -4,11 +4,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
+import org.w3c.dom.Text
 
 class MainActivity : AppCompatActivity() {
+    // Primer funcion en llamarse
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        setListeners()
     }
 
     private fun makeColored(view: View) {
@@ -21,6 +24,17 @@ class MainActivity : AppCompatActivity() {
             R.id.box_three_text -> view.setBackgroundColor(Color.BLUE)
             R.id.box_four_text -> view.setBackgroundColor(Color.MAGENTA)
             R.id.box_five_text -> view.setBackgroundColor(Color.BLUE)
+            else -> view.setBackgroundColor(Color.LTGRAY) // Equivalente al default en Java
+        }
+    }
+    
+    private fun makeDrawable(view: View){
+        when(view.id){
+            R.id.box_one_text -> view.setBackgroundResource(R.drawable.aguila_image)
+            R.id.box_two_text -> view.setBackgroundResource(R.drawable.buldog_image)
+            R.id.box_three_text -> view.setBackgroundResource(R.drawable.elefante_image)
+            R.id.box_four_text -> view.setBackgroundResource(R.drawable.pirana_image)
+            R.id.box_five_text -> view.setBackgroundResource(R.drawable.tigre_image)
             else -> view.setBackgroundColor(Color.LTGRAY) // Equivalente al default en Java
         }
     }
@@ -46,7 +60,7 @@ class MainActivity : AppCompatActivity() {
         // cada view va a tener un click listener que va a invocar la funcion makeColored la
         // cual dependiendo del id del elemento presionado va a cambiar su color
         for (item in clickableViews) {
-            item.setOnClickListener { makeColored(it) }
+            item.setOnClickListener { makeDrawable(it) }
         }
 
         }
