@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
             else -> view.setBackgroundColor(Color.LTGRAY) // Equivalente al default en Java
         }
     }
-    
+
     private fun makeDrawable(view: View){
         when(view.id){
             R.id.box_one_text -> view.setBackgroundResource(R.drawable.aguila_image)
