@@ -49,9 +49,14 @@ class DogDetailsFragment : Fragment() {
     Viendo la definicion de la funcion podemos notar que sirve de Factory Method para crear instancias.
   */
   companion object {
+    private const val DOGMODEL = "model"
 
-    fun newInstance(): DogDetailsFragment {
-      return DogDetailsFragment()
+    fun newInstance(dogModel: DogModel): DogDetailsFragment {
+      val args = Bundle()
+      args.putSerializable(DOGMODEL, dogModel)
+      val fragment = DogDetailsFragment()
+      fragment.arguments = args
+      return fragment
     }
   }
 

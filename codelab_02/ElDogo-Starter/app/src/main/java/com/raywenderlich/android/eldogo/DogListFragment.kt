@@ -129,8 +129,9 @@ class DogListFragment : Fragment() {
     }
   }
 
+  interface OnDogSelected {
+    fun onDogSelected(dogModel: DogModel)
+  }
+
 }
 
-interface OnDogSelected {
-  fun onDogSelected(dogModel: DogModel)
-}
