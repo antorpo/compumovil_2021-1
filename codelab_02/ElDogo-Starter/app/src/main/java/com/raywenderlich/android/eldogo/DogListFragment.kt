@@ -47,6 +47,7 @@ class DogListFragment : Fragment() {
   private lateinit var names: Array<String>
   private lateinit var descriptions: Array<String>
   private lateinit var urls: Array<String>
+  private lateinit var listener: OnDogSelected
 
   companion object {
 
@@ -57,6 +58,12 @@ class DogListFragment : Fragment() {
 
   override fun onAttach(context: Context?) {
     super.onAttach(context)
+    if (context is OnDogSelected) {
+      listener = context
+    } else {
+      throw ClassCastException(
+        context.toString() + " must implement OnDogSelected.")
+    }
 
     if (context != null) {
       // Get dog names and descriptions.
@@ -102,6 +109,10 @@ class DogListFragment : Fragment() {
       val dog = DogModel(imageResIds[position], names[position],
           descriptions[position], urls[position])
       viewHolder.setData(dog)
+
+      viewHolder.itemView.setOnClickListener {
+        listener.onDogSelected(dog)
+      }
     }
 
     override fun getItemCount() = names.size
@@ -118,4 +129,8 @@ class DogListFragment : Fragment() {
     }
   }
 
+}
+
+interface OnDogSelected {
+  fun onDogSelected(dogModel: DogModel)
 }
