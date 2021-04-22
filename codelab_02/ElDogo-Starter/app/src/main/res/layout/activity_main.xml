@@ -36,4 +36,12 @@
   android:paddingRight="@dimen/recycler_margin_horizontal"
   android:paddingBottom="@dimen/recycler_margin_vertical">
 
+    <!-- <fragment
+        android:id="@+id/details_fragment"
+        class="com.raywenderlich.android.eldogo.DogDetailsFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/> -->
+
+
+
 </FrameLayout>

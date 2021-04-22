@@ -36,10 +36,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
-//1
 class DogDetailsFragment : Fragment() {
 
-  //2
+  /*
+    En kotlin no existe la palabra reservada static, la cual nos permite definir elementos propios
+    de la clase a los cuales se puede acceder sin tener que crear una instancia.
+
+    En kotlin tenemos los companion object, lo cual nos deja cumplir con esto mismo pero con una
+    sintaxis diferente, en este caso la funcion newInstance() podra ser accedida sin tener que
+    instanciar un objeto de tipo DogDetailsFragment.
+
+    Viendo la definicion de la funcion podemos notar que sirve de Factory Method para crear instancias.
+  */
   companion object {
 
     fun newInstance(): DogDetailsFragment {
@@ -47,7 +55,6 @@ class DogDetailsFragment : Fragment() {
     }
   }
 
-  //3
   override fun onCreateView(inflater: LayoutInflater,
                             container: ViewGroup?,
                             savedInstanceState: Bundle?): View? {
