@@ -5,3 +5,4 @@
 - **Codelab_01** - [ConstraintLayout](https://developer.android.com/codelabs/kotlin-android-training-constraint-layout#0)
 - **Codelab_02** - [Android Fragments](https://www.raywenderlich.com/1364094-android-fragments-tutorial-an-introduction-with-kotlin)
 - **Codelab_03** - [Define navigation paths](https://developer.android.com/codelabs/kotlin-android-training-add-navigation?index=..%2F..android-kotlin-fundamentals#1)
+- **Codelab_04** - [ViewModel](https://developer.android.com/codelabs/kotlin-android-training-view-model?index=..%2F..android-kotlin-fundamentals#0)
