@@ -35,6 +35,8 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.raywenderlich.android.eldogo.databinding.FragmentDogDetailsBinding
+
 
 class DogDetailsFragment : Fragment() {
 
@@ -63,7 +65,16 @@ class DogDetailsFragment : Fragment() {
   override fun onCreateView(inflater: LayoutInflater,
                             container: ViewGroup?,
                             savedInstanceState: Bundle?): View? {
-    return inflater.inflate(R.layout.fragment_dog_details, container, false)
+
+    val fragmentDogDetailsBinding =
+      FragmentDogDetailsBinding.inflate(inflater, container, false)
+
+    val model = arguments!!.getSerializable(DOGMODEL) as DogModel
+
+    fragmentDogDetailsBinding.dogModel = model
+    model.text = String.format(getString(R.string.description_format),
+      model.description, model.url)
+    return fragmentDogDetailsBinding.root
   }
 
 }
