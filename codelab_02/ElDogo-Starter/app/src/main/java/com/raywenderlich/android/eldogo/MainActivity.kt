@@ -49,7 +49,12 @@ class MainActivity : AppCompatActivity(), DogListFragment.OnDogSelected {
     }
 
     override fun onDogSelected(dogModel: DogModel) {
-        Toast.makeText(this, "Hey, you selected " + dogModel.name + "!",
-            Toast.LENGTH_SHORT).show()
+        val detailsFragment =
+            DogDetailsFragment.newInstance(dogModel)
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.root_layout, detailsFragment, "dogDetails")
+            .addToBackStack(null)
+            .commit()
     }
 }
